@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "StubWinUI3Desktop (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "StubWinUI3Desktop (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

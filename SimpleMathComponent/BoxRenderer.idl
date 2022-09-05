@@ -1,0 +1,13 @@
+namespace SimpleMathComponent
+{
+    //[default_interface]
+    //[webhosthidden]
+    runtimeclass BoxRenderer : Microsoft.UI.Xaml.Controls.ContentControl
+    {
+        BoxRenderer();
+        static Microsoft.UI.Xaml.DependencyProperty BackColorProperty{ get; };  // read only DP
+        String BackColor;   // Write instance property
+        // Int32 Width;
+        // Int32 Height;
+    }
+}
