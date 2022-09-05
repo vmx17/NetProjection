@@ -34,7 +34,7 @@ with VisualStudio 2022;
 
 ## Update
 
-- 09/05/2022 SwapChainPanel placed in XAML in Generic.xaml directly.
+- 09/05/2022 SwapChainPanel placed in XAML in Generic.xaml directly. Re-make whole repository.
 
 ## Reference
 
@@ -43,3 +43,6 @@ with VisualStudio 2022;
 - [Windows Runtime components with C++/WinRT](https://docs.microsoft.com/en-us/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
 - [Build XAML controls with C++/WinRT](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/xaml-templated-controls-cppwinrt-winui-3)
 - [Call Windows Runtime APIs in desktop apps](https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-enhance)
+
+## Code Modification
+- please edit develop branch if you need.
