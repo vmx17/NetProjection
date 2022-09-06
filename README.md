@@ -1,15 +1,21 @@
 # A sample project of a C++/WinRT XAML object to make C#/.Net projection
 
 A sample project to make UserControl (based on SwapChainPanel in C++/WinRT) and projection project for .Net.
-The archive includes;
+This repository was made to "Ask Question" in Microsoft Q&A. So the code does not work, currently. How can I make it work, is the Question.
+
+The repository includes;
 
 - One Windows Runtime Component and Projecting project, _CppWinRTComponentProjectionSample_.
 - Two stub projects to use it. One is the original _ConsoleAppSample_, the others new _StubWinUI3Desktop_.
 
+The most of the code comes from _"original code"_ on Reference, "SimpleMath" by Microsoft.
+
 ## Intended
 
-I'm now building a WindowsAppSDK(WinUI3) based C#/.Net desktop application. (most probably use C#/WinRT)
-In a page, place a DirectX renderer and draw with C++/WinRT. So I want to check if the SwapChainPanel or UserControl derived from can be a boudary of interop C++/WinRT and C#. Is it possible?
+I'm now building a WindowsAppSDK(WinUI3) based C#/.Net desktop application. (most probably I will use C#/WinRT.)
+In a *Page* of the app, I want place a *SwapChainPanel* in WinUI3 and use DirectX to draw something in C++/WinRT. So I want to check if the *SwapChainPanel* or *UserControl* derived from the Projection project can be a boudary of interop C++/WinRT and C#.
+Is it possible?
+Though the repository code tried to refer WRC via NuGet package, it just accord a way of "SimpleMath". Generally speaking, most people prefer to refer to it as conventional DLL or project reference, I think.
 
 ## Reproducing Error
 
@@ -21,7 +27,7 @@ with VisualStudio 2022;
 3) Set Release/x64 (**NOT** _Debug_)
 4) build SimpleMath projection. This project contains two .idl files. One is original the other is what I add.
    If "SimpleMathProjection/nuget/SimpleMathComponent.0.1.0-prerelease.nupkg" generated, close the solution.
-5) (this is working case, same as original code) Open _ConsoleAppSample.sln_
+5) (this is the working case, same as original code) Open _ConsoleAppSample.sln_
 6) Set release/x64 (or Debug/x64) and build.
 7) Confirm it works (some arithmetic calculation) then close the solution.
 8) (this is the error case) open _StubWinUI3Desktop.sln_
@@ -31,11 +37,11 @@ with VisualStudio 2022;
 
 ## What doesn't work
 
-- cannot refer the BoxRenderer which is just contain SwapChainPanel in WinUI3. 
+- cannot refer to *BoxRenderer* which is just contain *SwapChainPanel* in WinUI3. 
 
 ## Update
 
-- 09/05/2022 SwapChainPanel placed in XAML in Generic.xaml directly.
+- 09/05/2022 SwapChainPanel placed in XAML in Generic.xaml directly (but it did not work). Property changed to represents background color (but it does not work).
 
 ## Reference
 
