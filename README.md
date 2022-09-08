@@ -43,7 +43,8 @@ with VisualStudio 2022;
 ## Update
 
 - 09/05/2022 SwapChainPanel placed in XAML in Generic.xaml directly (but it did not work). Property changed to represents background color (but it does not work).
-- 09/09/2022 Add normal SwapChainPanel (in WinUI3) page to compare propergated from NuGet package (in C++/WinRT). and realized that SwapChainPaned does not appeared to the consuming app. Though I did put DirectX resource on it but in vain.
+- 09/06/2022 by JunjieZhu-MSFT's comment, the compile errors were disappeared.
+- 09/09/2022 I realize that the SwapChainPanel is not shown. Add normal SwapChainPanel (in WinUI3) page to compare propergated from NuGet package (in C++/WinRT). and realized that SwapChainPaned does not appeared to the consuming app. Though I've once put DirectX resource on it but delete again.
 
 ## Reference
 
