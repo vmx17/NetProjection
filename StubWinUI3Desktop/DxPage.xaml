@@ -9,5 +9,8 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <prj:BoxRenderer />
+    <StackPanel BorderThickness="5" BorderBrush="DarkMagenta">
+        <prj:BoxRenderer />
+        <TextBlock>Is this propergated SwapChainPanel from nuget? It shold have black default border.</TextBlock>
+    </StackPanel>
 </Page>

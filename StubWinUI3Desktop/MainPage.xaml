@@ -11,7 +11,7 @@
     <Grid Background="RoyalBlue" Margin="10">
         <Grid x:Name="container" Background="DarkGreen" Margin="20" BorderThickness="1" BorderBrush="Black">
             <Frame x:Name="frame" >
-
+                
             </Frame>
         </Grid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Background="White">

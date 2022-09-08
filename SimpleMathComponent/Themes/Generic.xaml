@@ -7,7 +7,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:BoxRenderer">
-                    <SwapChainPanel Width="800" Height="600" Background="{TemplateBinding BackColor}" />
+                    <SwapChainPanel Width="200" Height="100" BorderThickness="5" BorderBrush="Black"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

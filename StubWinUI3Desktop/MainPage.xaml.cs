@@ -26,7 +26,7 @@ namespace StubWinUI3Desktop
         public MainPage()
         {
             this.InitializeComponent();
-            frame.Navigate(typeof(Page));
+            frame.Navigate(typeof(NormalSCPPage));
         }
 
         private void myButton_Click(object sender, RoutedEventArgs e)

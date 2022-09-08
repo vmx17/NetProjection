@@ -23,11 +23,9 @@
 		<PackageReference Include="SimpleMathComponent" Version="0.1.0-prerelease" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.4" />
-	</ItemGroup>
-	<ItemGroup>
 		<None Remove="DxPage.xaml" />
 		<None Remove="MainPage.xaml" />
+		<None Remove="NormalSCPPage.xaml" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -53,6 +51,11 @@
   -->
 	<ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
 		<ProjectCapability Include="Msix" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Page Update="NormalSCPPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
 	</ItemGroup>
 	<ItemGroup>
 		<Page Update="DxPage.xaml">
