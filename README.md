@@ -17,6 +17,7 @@ In a *Page* of the app, I want place a *SwapChainPanel* in WinUI3 and use Direct
 Is it possible?
 Though the repository code tried to refer WRC via NuGet package, it just accord a way of "SimpleMath". Generally speaking, most people prefer to refer to it as conventional DLL or project reference, I think.
 
+
 ## Reproducing Error
 
 Windows SDK 10.0.22621.0 and 10.0.19040.0(as minimum).
@@ -37,11 +38,12 @@ with VisualStudio 2022;
 
 ## What doesn't work
 
-- cannot refer to *BoxRenderer* which is just contain *SwapChainPanel* in WinUI3. 
+- cannot refer to *BoxRenderer* which is just contain *SwapChainPanel* in WindowsRuntimeComponent in C++/WinRT. 
 
 ## Update
 
 - 09/05/2022 SwapChainPanel placed in XAML in Generic.xaml directly (but it did not work). Property changed to represents background color (but it does not work).
+- 09/09/2022 Add normal SwapChainPanel (in WinUI3) page to compare propergated from NuGet package (in C++/WinRT). and realized that SwapChainPaned does not appeared to the consuming app. Though I did put DirectX resource on it but in vain.
 
 ## Reference
 
