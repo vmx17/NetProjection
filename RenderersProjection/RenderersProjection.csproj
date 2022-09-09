@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows10.0.22621.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <!-- Set Platform to AnyCPU to allow consumption of the projection assembly from any architecture. -->
+    <Platform>AnyCPU</Platform>
+    <!-- Workaround for MSB3271 error on processor architecture mismatch -->
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.6.5" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.1" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.4" />
+  </ItemGroup>
+
+  <!--CsWinRT properties-->
+  <PropertyGroup>
+    <!--Specify namespaces to create a C# projection for-->
+    <CsWinRTIncludes>SimpleMathComponent</CsWinRTIncludes>
+    <!--Set output path for generated source files/projection dll to OutDir (defined in Directory.Build.props)-->
+    <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
+  </PropertyGroup>
+
+  <!--Properties for generating the NuGet package-->
+  <PropertyGroup>
+    <GeneratedNugetDir>.\nuget\</GeneratedNugetDir>
+    <NuspecFile>$(GeneratedNugetDir)SimpleMathProjection.nuspec</NuspecFile>
+    <!--Specify output path for the generated *.nupkg file-->
+    <OutputPath>$(GeneratedNugetDir)</OutputPath>
+    <!--Set the property below to false if you do not want to generate a NuGet package on build-->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+</Project>
