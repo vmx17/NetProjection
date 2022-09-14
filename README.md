@@ -1,7 +1,7 @@
 # A sample project of a C++/WinRT XAML object to make C#/.Net projection
 
 A sample project to make UserControl (based on SwapChainPanel in C++/WinRT) and projection project for .Net.
-This repository was made to "Ask Question" in Microsoft Q&A. So the code does not work, currently. How can I make it work, is the Question.
+This repository was made to "Ask Question" in Microsoft Q&A but I also want help from other persons. The code does not work, currently. How can I make it work, is the Question.
 
 The repository includes;
 
@@ -34,7 +34,7 @@ C:\my_path\NetProjection\_build\x64\Debug\ConsoleAppSample\bin\ConsoleAppSample.
 ```
 7) close the solution.
 8) Open _StubWinUI3Desktop.sln_ and set release/x64 or Debug/x64 then build.
-9) Run it and push left button. Now it works without errors but seems no SwapChainAppeared.
+9) Run it and push "Next Page" button. Now it works without errors but seems no SwapChainAppeared.
 
 ## What doesn't work
 
@@ -56,3 +56,8 @@ _StubWinUI3Desktop_ has a normal SwapChainPanel at he first page to compare WRC'
 - [Windows Runtime components with C++/WinRT](https://docs.microsoft.com/en-us/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
 - [Build XAML controls with C++/WinRT](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/xaml-templated-controls-cppwinrt-winui-3)
 - [Call Windows Runtime APIs in desktop apps](https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-enhance)
+
+## About the repository
+- To change main requires request.
+- develop can be modified freely.
+- If there are another branch, that's a experimental. Not use besically.
