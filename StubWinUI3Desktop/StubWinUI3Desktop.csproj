@@ -18,10 +18,6 @@
 			../RenderersProjection/nuget
 		</RestoreSources>
 	</PropertyGroup>
-
-	<ItemGroup>
-		<PackageReference Include="RenderersWRC" Version="0.1.0-prerelease" />
-	</ItemGroup>
 	<ItemGroup>
 		<None Remove="DxPage.xaml" />
 		<None Remove="MainPage.xaml" />
@@ -41,6 +37,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.4" />
 		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.194" />
+		<PackageReference Include="SimpleMathComponent" Version="0.1.6-prerelease" />
 		<Manifest Include="$(ApplicationManifest)" />
 	</ItemGroup>
 

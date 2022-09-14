@@ -24,24 +24,27 @@ Windows SDK 10.0.22621.0 and 10.0.19040.0(as minimum).
 with VisualStudio 2022;
 
 1) Open _CppWinRTComponentProjectionSample.sln_
-2) Restore NuGet packages. (Please keep CsWinRT's version to 1.6.5, otherwise generate errors.)
+2) Restore NuGet packages.
 3) Set Release/x64 (**NOT** _Debug_)
-4) build SimpleMath projection. This project contains two .idl files. One is original the other is what I add.
-   If "SimpleMathProjection/nuget/SimpleMathComponent.0.1.0-prerelease.nupkg" generated, close the solution.
-5) (this is the working case, same as original code) Open _ConsoleAppSample.sln_
-6) Set release/x64 (or Debug/x64) and build.
-7) Confirm it works (some arithmetic calculation) then close the solution.
-8) (this is the error case) open _StubWinUI3Desktop.sln_
-9) Set Debug/x64 (or Release/x64) and build.
-10) Run it. You'll get error saying;
-    _"Error    WMC0001    Unknown type 'BoxRenderer' in XML namespace 'using:SimpleMathProjection'    StubWinUI3Desktop    <u>my-path</u>\NetProjection\StubWinUI3Desktop\DxPage.xaml    12    "_
+4) build SimpleMath projection. This project contains two .idl files. One is original the other is what I add. If "SimpleMathProjection/nuget/SimpleMathComponent.0.1.6-prerelease.nupkg" generated, close the solution.
+5) Open _ConsoleAppSample.sln_ and set release/x64 or Debug/x64 then build.
+6) Run. Now you see a runtime error below.
+```
+C:\my_path\NetProjection\_build\x64\Debug\ConsoleAppSample\bin\ConsoleAppSample.exe (process 11888) exited with code -529697949.
+```
+7) close the solution.
+8) Open _StubWinUI3Desktop.sln_ and set release/x64 or Debug/x64 then build.
+9) Run it and push left button. Now it works without errors but seems no SwapChainAppeared.
 
 ## What doesn't work
 
+- have some reference error on _ConsoleAppSample_. It seems to come from a tiny reference error but I cannot find the fix by now. (degraded...orz)
 - cannot refer to *BoxRenderer* which is just contain *SwapChainPanel* in WindowsRuntimeComponent in C++/WinRT. 
 
 ## Update
 
+- 09/14/2022 Fix reference bug on _StubWinUI3Desktop.sln_. Change property from _BackColor_ to _BoxSize_. Because WinUI3's SwapChainPane does not have the BackColor property then define an independent property. Some text was put on SwapChainPanels.<br>
+_StubWinUI3Desktop_ has a normal SwapChainPanel at he first page to compare WRC's SwapChainPanel-based user control.
 - 09/05/2022 SwapChainPanel placed in XAML in Generic.xaml directly (but it did not work). Property changed to represents background color (but it does not work).
 - 09/06/2022 by JunjieZhu-MSFT's comment, the compile errors were disappeared.
 - 09/09/2022 I realize that the SwapChainPanel is not shown. Add normal SwapChainPanel (in WinUI3) page to compare propergated from NuGet package (in C++/WinRT). and realized that SwapChainPaned does not appeared to the consuming app. Though I've once put DirectX resource on it but delete again.

@@ -9,8 +9,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel BorderThickness="5" BorderBrush="DarkOrange">
-        <SwapChainPanel x:Name="NormalSCPanel" BorderThickness="10" BorderBrush="Black">
-            <TextBlock>This is Normal SwapChainPanel page (but cannot see black border???)</TextBlock>
+        <SwapChainPanel x:Name="NormalSCPanel" BorderThickness="10" BorderBrush="Yellow">
+            <TextBlock>This is Normal SwapChainPanel page (but cannot see yellow border???) Push next button to see SwapChainPanel-based BoxRenderer in nuget package.</TextBlock>
         </SwapChainPanel>
     </StackPanel>
 </Page>

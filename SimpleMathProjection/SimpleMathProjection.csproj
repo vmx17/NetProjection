@@ -16,13 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RenderersWRC\RenderersWRC.vcxproj" />
+    <ProjectReference Include="..\SimpleMathComponent\SimpleMathComponent.vcxproj" />
   </ItemGroup>
 
   <!--CsWinRT properties-->
   <PropertyGroup>
     <!--Specify namespaces to create a C# projection for-->
-    <CsWinRTIncludes>RenderersWRC</CsWinRTIncludes>
+    <CsWinRTIncludes>SimpleMathComponent</CsWinRTIncludes>
     <!--Set output path for generated source files/projection dll to OutDir (defined in Directory.Build.props)-->
     <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
   </PropertyGroup>
@@ -30,7 +30,7 @@
   <!--Properties for generating the NuGet package-->
   <PropertyGroup>
     <GeneratedNugetDir>.\nuget\</GeneratedNugetDir>
-    <NuspecFile>$(GeneratedNugetDir)RenderersProjection.nuspec</NuspecFile>
+    <NuspecFile>$(GeneratedNugetDir)SimpleMathProjection.nuspec</NuspecFile>
     <!--Specify output path for the generated *.nupkg file-->
     <OutputPath>$(GeneratedNugetDir)</OutputPath>
     <!--Set the property below to false if you do not want to generate a NuGet package on build-->

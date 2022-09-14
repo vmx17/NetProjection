@@ -14,7 +14,7 @@
                 
             </Frame>
         </Grid>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Background="White">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Background="Crimson">
             <Button x:Name="myButton" Click="myButton_Click">Next Page</Button>
             <Button x:Name="myButton2" Click="myButton2_Click">Previous Page</Button>
         </StackPanel>

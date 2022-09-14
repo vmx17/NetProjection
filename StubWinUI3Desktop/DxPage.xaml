@@ -10,7 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel BorderThickness="5" BorderBrush="DarkMagenta">
-        <prj:BoxRenderer />
-        <TextBlock>Is this propergated SwapChainPanel from nuget? It shold have black default border.</TextBlock>
+        <prj:BoxRenderer BorderThickness="10" BorderBrush="ForestGreen"  BoxSize="100"/>
+        <TextBlock>Is this propergated SwapChainPanel from nuget? It shold have green border.</TextBlock>
     </StackPanel>
 </Page>

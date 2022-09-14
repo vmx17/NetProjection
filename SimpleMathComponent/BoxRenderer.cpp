@@ -1,5 +1,5 @@
 ﻿#include "pch.h"
-#include "BoxRenderer.h"
+//#include "BoxRenderer.h"
 #if __has_include("BoxRenderer.g.cpp")
 #include "BoxRenderer.g.cpp"
 #endif
@@ -11,19 +11,19 @@ using namespace Concurrency;
 
 namespace winrt::SimpleMathComponent::implementation
 {
-    Microsoft::UI::Xaml::DependencyProperty BoxRenderer::m_backColorProperty =
+    Microsoft::UI::Xaml::DependencyProperty BoxRenderer::m_boxSizeProperty =
         Microsoft::UI::Xaml::DependencyProperty::Register(
-            L"BackColor",
-            winrt::xaml_typename<winrt::hstring>(),
+            L"BoxSize",
+            winrt::xaml_typename<int32_t>(),
             winrt::xaml_typename<SimpleMathComponent::BoxRenderer>(),
-            Microsoft::UI::Xaml::PropertyMetadata{ winrt::box_value(L"ForestGreen"), Microsoft::UI::Xaml::PropertyChangedCallback{ &BoxRenderer::OnBackColorChanged } }
+            Microsoft::UI::Xaml::PropertyMetadata{ winrt::box_value(100), Microsoft::UI::Xaml::PropertyChangedCallback{ &BoxRenderer::OnBoxSizeChanged } }
     );
     BoxRenderer::BoxRenderer()
     {
         DefaultStyleKey(winrt::box_value(L"BoxRendererApp.BoxRenderer"));
     }
 
-    void BoxRenderer::OnBackColorChanged(Microsoft::UI::Xaml::DependencyObject const& d, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& /* e */)
+    void BoxRenderer::OnBoxSizeChanged(Microsoft::UI::Xaml::DependencyObject const& d, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& /* e */)
     {
         if (SimpleMathComponent::BoxRenderer theControl{ d.try_as<SimpleMathComponent::BoxRenderer>() })
         {
