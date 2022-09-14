@@ -12,7 +12,8 @@ _*/
 * - Copy.*
 * - Copy/
 *.bak/
-*.bkup/
+*bkup/
+*backup/
 *old/
 *.old
 *old.*

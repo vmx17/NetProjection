@@ -7,7 +7,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:BoxRenderer">
-                    <SwapChainPanel Width="200" Height="100" BorderThickness="5" BorderBrush="Black"/>
+                    <SwapChainPanel Width="200" Height="100" BorderThickness="10" BorderBrush="ForestGreen">
+                        <TextBox Text="This is the BoxRenderer comes from NuGet package. This panel have a green border in default." />
+                    </SwapChainPanel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
