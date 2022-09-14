@@ -1,5 +1,7 @@
 # A sample project of a C++/WinRT XAML object to make C#/.Net projection
 
+## !!!This is experimental branch do not edit.!!!
+
 A sample project to make UserControl (based on SwapChainPanel in C++/WinRT) and projection project for .Net.
 This repository was made to "Ask Question" in Microsoft Q&A but I also want help from other persons. The code does not work, currently. How can I make it work, is the Question.
 
