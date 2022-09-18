@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 
 #include "pch.h"
-#include "SimpleMath.h"
+//#include "SimpleMath.h"
 #include "SimpleMath.g.cpp"
 
 namespace winrt::SimpleMathComponent::implementation
