@@ -9,7 +9,8 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel BorderThickness="5" BorderBrush="DarkMagenta">
-        <prj:BoxRenderer BorderThickness="10" BorderBrush="LightYellow"  BoxSize="100"/>
+    <StackPanel BorderThickness="10" BorderBrush="DarkMagenta">
+        <prj:BoxRenderer Width="200" Height="100" BorderThickness="5" BorderBrush="WhiteSmoke"/>
+        <TextBlock Text="This text comes from DxPage(local), not from NuGet library. The local definition set WhiteSmoke frame but..."/>
     </StackPanel>
 </Page>

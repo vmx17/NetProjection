@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>SimpleMathComponent</id>
-    <version>0.2.0-prerelease</version>
+    <version>0.3.0-prerelease</version>
     <authors>Volker Veidt</authors>
     <description>A simple component with basic math operations and SwapChainPanel for renderer</description>
     <dependencies>
