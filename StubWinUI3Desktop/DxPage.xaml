@@ -10,7 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel BorderThickness="10" BorderBrush="DarkMagenta">
-        <prj:BoxRenderer Width="200" Height="100" BorderThickness="5" BorderBrush="WhiteSmoke"/>
-        <TextBlock Text="This text comes from DxPage(local), not from NuGet library. The local definition set WhiteSmoke frame but..."/>
+        <prj:BoxRenderer Width="200" Height="100" BorderThickness="5" BorderBrush="Yellow"/>
+        <TextBlock Text="Above this text, there should be BoxRencderer(SwapCHainPanel from WRC) with Yellow border but I cannot see it."/>
     </StackPanel>
 </Page>
