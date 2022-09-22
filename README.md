@@ -41,9 +41,10 @@ I remove _SimpleManth.idl_ and related modules. Though it was in the same namesp
 3) Set Release/x64 (**NOT** Debug)
 4) build solution. If "SimpleMathProjection/nuget/SimpleMathComponent.0.3.0-prerelease.nupkg" generated, close the solution.<br>
    The control "**BoxRenderer**" is included in it. This is a user control derived from SwapChainPanel.
-5) Open _StubWinUI3Desktop.sln_ and restore NuGet packages. This should include "_SimpleMathComponent.0.3.0-prerelease.nupkg_" got in 4.
+5) If there are folder named "0.3.0-prerelease" in "_C:\Users\your_home\.nuget\packages\simplemathcomponent_", delete it. 
+6) Open _StubWinUI3Desktop.sln_ and restore NuGet packages. This should include "_SimpleMathComponent.0.3.0-prerelease.nupkg_" got in 4.
    set release/x64 or Debug/x64 then build.
-6) Run it and push "Next Page" button. Now it works without errors but seems no SwapChainPanel appeared. IS it?
+7) Run it and push "Next Page" button. Now it works without errors but seems no SwapChainPanel appeared. Is it?
 
 ## What doesn't work
 
@@ -51,13 +52,35 @@ I remove _SimpleManth.idl_ and related modules. Though it was in the same namesp
 
 ## Update
 
-- 9/22/2022 delete SimpleMath part from "_CppWinRTComponentProjectionSample.sln_". Now it has only one *.idl, "BoxRenderer". It just a SwapChainPanel.
-- 9/21/2022 reduce parameters and properties from the experimental souce Ci7.
-- 09/14/2022 Fix reference bug on _StubWinUI3Desktop.sln_. Change property from _BackColor_ to _BoxSize_. Because WinUI3's SwapChainPane does not have the BackColor property then define an independent property (not used, currently). CsWinRT was added/updated to required projects.<br>
-  _StubWinUI3Desktop_ has a normal SwapChainPanel at the first page to compare WRC's SwapChainPanel-based user control.
-- 09/05/2022 SwapChainPanel placed in XAML in Generic.xaml directly (but it did not work). Property changed to represents background color (but it does not work).
-- 09/06/2022 by JunjieZhu-MSFT's comment, the compile errors were disappeared.
-- 09/09/2022 I realize that the SwapChainPanel is not shown. Add normal SwapChainPanel (in WinUI3) page to compare propergated from NuGet package (in C++/WinRT). and realized that SwapChainPaned does not appeared to the consuming app. Though I've once put DirectX resource on it but delete again.
+- 9/23/2022
+  In develop branch;
+  
+  - delete SimpleMath part from "_CppWinRTComponentProjectionSample.sln_". Now it has only one *.idl, "BoxRenderer". It just a SwapChainPanel.
+  - properties are removed from BoxRenderer.
+  - the Ci7 branch was deleted.
+
+- 09/21/2022 reduce parameters and properties from the experimental souce Ci7 branch.
+
+- 09/14/2022
+  
+  - Fix reference bug on _StubWinUI3Desktop.sln_.
+  - Change property from _BackColor_ to _BoxSize_. Because WinUI3's SwapChainPane does not have the BackColor property then define an independent property (not used, currently).
+  - CsWinRT was added/updated to required projects.
+    _StubWinUI3Desktop_ has a normal SwapChainPanel at the first page to compare WRC's SwapChainPanel-based user control.
+
+- 09/09/2022
+  
+  - I realize that the SwapChainPanel does not appeare to the consuming app
+  - Add normal SwapChainPanel (in WinUI3) page to compare propergated from NuGet package (in C++/WinRT). and realized that SwapChainPaned. Though I've once put DirectX resource on it but delete again.
+
+- 09/06/2022
+  
+  - by JunjieZhu-MSFT's comment, the compile errors were disappeared. (Thanks!)
+
+- 09/05/2022
+  
+  - SwapChainPanel placed in XAML in Generic.xaml directly (but it did not work).
+  - Property changed to represents background color (but it does not work).
 
 ## Reference
 
