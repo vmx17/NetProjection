@@ -2,7 +2,7 @@
 
 
 A sample project to make UserControl (based on SwapChainPanel in C++/WinRT) and projection project for .Net.
-This repository was made to "Ask Question" in Microsoft Q&A but I also want help from other persons. The code does not work, currently. How can I make it work, is the Question.
+This repository was made to "Ask Question" in [Microsoft Q&A](https://learn.microsoft.com/en-us/answers/questions/992490/how-to-make-projection-usercontrol-xaml-resource-i.html) but I also want help from other persons. The code does not work, currently. How can I make it work, is the Question.
 
 The repository includes;
 
