@@ -1,3 +1,4 @@
+<!--This markdown is edited with VSCode and Markdown Preview Enhanced plugin-->
 # A sample project of a C++/WinRT XAML object to make C#/.Net projection
 
 A sample project to make UserControl (based on SwapChainPanel in C++/WinRT) and projection project for .Net.
@@ -6,7 +7,7 @@ This repository was made to "Ask Question" in Microsoft Q&A but I also want help
 The repository includes;
 
 - One Windows Runtime Component and Projecting project, _CppWinRTComponentProjectionSample_.
-- Two stub projects to use it. One is the original _ConsoleAppSample_, the others new _StubWinUI3Desktop_. Ppreviously another solution _ConsoleAppSample_ existed but was removed. This is to simplify the point of error.
+- Two stub projects to use it. One is the original _ConsoleAppSample_, the others new _StubWinUI3Desktop_. Previously another solution _ConsoleAppSample_ existed but was removed. This is to simplify the point of error.
 
 The most of the code comes from _"original code"_ on Reference "SimpleMath" by Microsoft.
 
@@ -14,52 +15,62 @@ The most of the code comes from _"original code"_ on Reference "SimpleMath" by M
 
 I'm now building a WindowsAppSDK(WinUI3) based C#/.Net desktop application. (most probably I will use C#/WinRT.)
 Now the era of Modern UI. Windows App SDK gave us new way to make desktop application using WinUI3 in XAML.<br>
-So I think that I can get performance in C++ and get productivity in C#. Espacially around DirectX, the SwapChainPanel was re-defined in Microsoft.UI.XAML.Controls namespace. This means, Microsoft let us use the SwapChainPanel drived by DirectX with C++/WinRT, and in other parts make us use C#. Interop of C#/WinRT and C++/WinRT using WindowsAppSDK make it possible...<br>
+So I thought that I can get performance in C++ and get productivity in C#. Especially around DirectX, the SwapChainPanel was re-defined in Microsoft.UI.XAML.Controls namespace. This means, Microsoft let us use the SwapChainPanel driven by DirectX with C++/WinRT, and in other parts make us use C#. Interop of C#/WinRT and C++/WinRT using WindowsAppSDK make it possible...<br>
+![Fig.1](.\images\Fig1.png)
+<center>Fig.1 a rough sketch of C#-based C++/WinRT graphic program</center>
+<br>
+But it seems a harder way than I thought. Every tutorials in Microsoft Docs avoid this case. In old days, in UWP articles, there are some ways to make tool panels in XAML. Now, the .Net 6 restrict to use "project reference". It means that I have to make it in NuGet package. Are there good way to debug C# and C++'s *.nuget package interactively? The nuget package should not be just a gathering of APIs. It needs states, memory and processes. Is the architecture possible?
 
-but it's a dream. <br>
+With "project reference", I have a UWP sample. What I want is WinUI3 desktop.
 
+
+<br><br>
+## Status
 In a *Page* of the C# app, "_StubWinUI3Desktop_", I want place a *SwapChainPanel* in WinUI3 and use DirectX to draw something in C++/WinRT. So I want to check if the *SwapChainPanel* or *UserControl* derived from the Projection project can be a boundary of interop C++/WinRT and C#.<br>
 
 After all, the question comes to "Is it possible?"<br>
 
 Though the repository code tried to refer WRC via NuGet package, it just accord a way of "SimpleMath". I realized the nuget package is very hard to debug. Generally speaking, most people prefer to refer to it as conventional DLL or project reference, I think.
-
+<br><br>
 ## Reproducing Error
 
-updated: 9/22/2022
+updated: 9/27/2022
 
 Windows SDK 10.0.22621.0 and 10.0.19040.0(as minimum).
 with VisualStudio 2022;
 
-Confirm, this modification was done in _develoip_ branch only.
+Confirm, this modification was done in _develop_ branch only.
 
-I remove _SimpleManth.idl_ and related modules. Though it was in the same namespace of _BoxRenderer.idl_, when I unified them, the compiler output a multiple declaration error. So I decided to remove _SimpleMath.idl_ and its staff. And to simplify, I removed property from _BoxRenderer.idl_ also. Now the code "ConsoleAppSample.sln" does not work. Then its solution files were removed.
- Before starting, confirm you're in _develoip_ branch. This is experimental branch.
+I remove _SimpleMath.idl_ and related modules. Though it was in the same namespace of _BoxRenderer.idl_, when I unified them, the compiler output a multiple declaration error. So I decided to remove _SimpleMath.idl_ and its staff. And to simplify, I removed property from _BoxRenderer.idl_ also. Now the code "ConsoleAppSample.sln" does not work. Then its solution files were removed.
+ Before starting, confirm you're in _develop_ branch. This is experimental branch.
 
-1) Open _CppWinRTComponentProjectionSample.sln_
-2) Restore NuGet packages.
-3) Set Release/x64 (**NOT** Debug)
-4) build solution. If "SimpleMathProjection/nuget/SimpleMathComponent.0.3.0-prerelease.nupkg" generated, close the solution.<br>
-   The control "**BoxRenderer**" is included in it. This is a user control derived from SwapChainPanel.
-5) If there are folder named "0.3.0-prerelease" in "_C:\Users\your_home\.nuget\packages\simplemathcomponent_", delete it. 
-6) Open _StubWinUI3Desktop.sln_ and restore NuGet packages. This should include "_SimpleMathComponent.0.3.0-prerelease.nupkg_" got in 4.
-   set release/x64 or Debug/x64 then build.
-7) Run it and push "Next Page" button. Now it works without errors but seems no SwapChainPanel appeared. Is it?
+1) delete "_your_home_\\.nuget\packages\simplemathcomponent\A.B.C-prerelease\\" folders, if exists. (_A.B.C_ is version number.)
+2) Open _CppWinRTComponentProjectionSample.sln_
+3) Restore NuGet packages.
+4) Set Release/x64 (optionally, Debug can be build but not referred.)
+5) build solution. If "SimpleMathProjection/nuget/SimpleMathComponent.A.B.C-prerelease.nupkg" generated, close the solution. 
+The control "**BoxRenderer**" is included in it. This is a user control derived from SwapChainPanel.
+1) Open _StubWinUI3Desktop.sln_ and restore NuGet packages. Make sure the project include "_SimpleMathComponent.A.B.C-prerelease.nupkg_" got in 5.
+2) set release/x64 or Debug/x64 then build.
+3) Run it and push "Next Page" button. Now it works without errors but seems no SwapChainPanel appeared. Is it?
 
 ## What doesn't work
 
-- cannot refer to *BoxRenderer* XAML control which is just contain *SwapChainPanel* in WindowsRuntimeComponent in C++/WinRT. 
+- cannot display *BoxRenderer* XAML custom control which is just contain *SwapChainPanel* in WindowsRuntimeComponent which is written in C++/WinRT. There are no runtime error. If Height and Width properties are specified in the reference in DxPage.xaml of StubWinUI3Desktop, there appears a blank object (can confirm it looking the position of button goes left). So, refers something but does not show contents. All default value seems neglected.(?)
 
 ## Update
 
+- 9/27/2022
+  - Update some NuGet packages to the latest stables and confirm it doesn't harm.
+  - Add "Themes\Generic.xaml" in *.nupec of projection project to add it to "Lib" in output. but no luck.
 - 9/23/2022
   In develop branch;
   
-  - delete SimpleMath part from "_CppWinRTComponentProjectionSample.sln_". Now it has only one *.idl, "BoxRenderer". It just a SwapChainPanel.
+  - delete SimpleMath part from "_CppWinRTComponentProjectionSample.sln_". Now it has only one *.idl, "BoxRenderer". It just a SwapChainPanel. (the name 'SimpleMath' has no longer any meaning.)
   - properties are removed from BoxRenderer.
   - the Ci7 branch was deleted.
 
-- 09/21/2022 reduce parameters and properties from the experimental souce Ci7 branch.
+- 09/21/2022 reduce parameters and properties from the experimental source Ci7 branch.
 
 - 09/14/2022
   
@@ -70,8 +81,8 @@ I remove _SimpleManth.idl_ and related modules. Though it was in the same namesp
 
 - 09/09/2022
   
-  - I realize that the SwapChainPanel does not appeare to the consuming app
-  - Add normal SwapChainPanel (in WinUI3) page to compare propergated from NuGet package (in C++/WinRT). and realized that SwapChainPaned. Though I've once put DirectX resource on it but delete again.
+  - I realize that the SwapChainPanel does not appear to the consuming app
+  - Add normal SwapChainPanel (in WinUI3) page to compare propagated from NuGet package (in C++/WinRT). and realized that SwapChainPaned. Though I've once put DirectX resource on it but delete again.
 
 - 09/06/2022
   
@@ -94,4 +105,4 @@ I remove _SimpleManth.idl_ and related modules. Though it was in the same namesp
 
 - To change main requires pull request.
 - develop branch can be modified freely.
-- If there are another branch, that's a experimental. Do not use, besically.
+- If there are another branch, that's a experimental. Do not use, basically.
