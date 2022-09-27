@@ -16,7 +16,7 @@ The most of the code comes from _"original code"_ on Reference "SimpleMath" by M
 I'm now building a WindowsAppSDK(WinUI3) based C#/.Net desktop application. (most probably I will use C#/WinRT.)
 Now the era of Modern UI. Windows App SDK gave us new way to make desktop application using WinUI3 in XAML.<br>
 So I thought that I can get performance in C++ and get productivity in C#. Especially around DirectX, the SwapChainPanel was re-defined in Microsoft.UI.XAML.Controls namespace. This means, Microsoft let us use the SwapChainPanel driven by DirectX with C++/WinRT, and in other parts make us use C#. Interop of C#/WinRT and C++/WinRT using WindowsAppSDK make it possible...<br>
-![Fig.1](.\images\Fig1.png)
+![Fig.1](./images/Fig1.png)
 <center>Fig.1 a rough sketch of C#-based C++/WinRT graphic program</center>
 <br>
 But it seems a harder way than I thought. Every tutorials in Microsoft Docs avoid this case. In old days, in UWP articles, there are some ways to make tool panels in XAML. Now, the .Net 6 restrict to use "project reference". It means that I have to make it in NuGet package. Are there good way to debug C# and C++'s *.nuget package interactively? The nuget package should not be just a gathering of APIs. It needs states, memory and processes. Is the architecture possible?
