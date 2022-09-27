@@ -36,7 +36,7 @@
 #include <winrt/Windows.Graphics.Display.h>
 #include <winrt/Windows.UI.Core.h>
 #include "BoxRenderer.h"
-#include "SimpleMath.h"
+//#include "SimpleMath.h"
 
 typedef unsigned long uint32;
 typedef unsigned long long uint64;

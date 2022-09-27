@@ -9,14 +9,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="RoyalBlue" Margin="10">
-        <Grid x:Name="container" Background="DarkGreen" Margin="20" BorderThickness="1" BorderBrush="Black">
+        <Grid x:Name="container" Margin="20" BorderThickness="1" BorderBrush="Black">
             <Frame x:Name="frame" >
                 
             </Frame>
         </Grid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Background="Crimson">
             <Button x:Name="myButton" Click="myButton_Click">Next Page</Button>
-            <Button x:Name="myButton2" Click="myButton2_Click">Previous Page</Button>
+            <Button x:Name="myButton2" Click="myButton2_Click" >Previous Page</Button>
         </StackPanel>
     </Grid>
 </Page>

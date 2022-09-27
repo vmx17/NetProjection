@@ -5,8 +5,8 @@ namespace SimpleMathComponent
     runtimeclass BoxRenderer : Microsoft.UI.Xaml.Controls.ContentControl
     {
         BoxRenderer();
-        static Microsoft.UI.Xaml.DependencyProperty BoxSizeProperty{ get; set; };
-        Int32 BoxSize;
+        //static Microsoft.UI.Xaml.DependencyProperty BoxSizeProperty{ get; };
+        //Int32 BoxSize;
         // Int32 Width;
         // Int32 Height;
     }

@@ -11,19 +11,19 @@ using namespace Concurrency;
 
 namespace winrt::SimpleMathComponent::implementation
 {
-    Microsoft::UI::Xaml::DependencyProperty BoxRenderer::m_boxSizeProperty =
+    /*Microsoft::UI::Xaml::DependencyProperty BoxRenderer::m_boxSizeProperty =
         Microsoft::UI::Xaml::DependencyProperty::Register(
             L"BoxSize",
             winrt::xaml_typename<int32_t>(),
             winrt::xaml_typename<SimpleMathComponent::BoxRenderer>(),
             Microsoft::UI::Xaml::PropertyMetadata{ winrt::box_value(100), Microsoft::UI::Xaml::PropertyChangedCallback{ &BoxRenderer::OnBoxSizeChanged } }
-    );
+    );*/
     BoxRenderer::BoxRenderer()
     {
-        DefaultStyleKey(winrt::box_value(L"BoxRendererApp.BoxRenderer"));
+        DefaultStyleKey(winrt::box_value(L"SimpleMathComponent.BoxRenderer"));
     }
 
-    void BoxRenderer::OnBoxSizeChanged(Microsoft::UI::Xaml::DependencyObject const& d, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& /* e */)
+    /*void BoxRenderer::OnBoxSizeChanged(Microsoft::UI::Xaml::DependencyObject const& d, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& /* e *//*)
     {
         if (SimpleMathComponent::BoxRenderer theControl{ d.try_as<SimpleMathComponent::BoxRenderer>() })
         {
@@ -32,5 +32,5 @@ namespace winrt::SimpleMathComponent::implementation
             SimpleMathComponent::implementation::BoxRenderer* ptr{ winrt::get_self<SimpleMathComponent::implementation::BoxRenderer>(theControl) };
             // Call members of the implementation type via ptr.
         }
-    }
+    }*/
 }

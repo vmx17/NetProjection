@@ -9,7 +9,8 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel BorderThickness="5" BorderBrush="DarkMagenta">
-        <prj:BoxRenderer BorderThickness="10" BorderBrush="LightYellow"  BoxSize="100"/>
+    <StackPanel BorderThickness="10" BorderBrush="DarkMagenta">
+        <prj:BoxRenderer Width="200" Height="100" BorderThickness="5" BorderBrush="Yellow"/>
+        <TextBlock Text="Above this text, there should be BoxRenderer(SwapChainPanel from WRC) with Yellow border but I cannot see it."/>
     </StackPanel>
 </Page>

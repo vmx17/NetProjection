@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>SimpleMathComponent</id>
-    <version>0.2.0-prerelease</version>
+    <version>0.3.1-prerelease</version>
     <authors>Volker Veidt</authors>
     <description>A simple component with basic math operations and SwapChainPanel for renderer</description>
     <dependencies>
@@ -18,5 +18,6 @@
     <!--To support x86 and ARM64, build SimpleMathComponent for those other architectures and uncomment the entries below.-->
     <!--<file src="..\..\_build\Win32\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-x86\native\SimpleMathComponent.dll" />-->
     <!--<file src="..\..\_build\arm64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-arm64\native\SimpleMathComponent.dll" />-->
+	<file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent\Themes\Generic.xaml" target="lib\net6.0-windows10.0.22621.0\Themes"/>
   </files>
 </package>
