@@ -35,10 +35,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.0.0" />
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.5" />
-		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.1" />
-		<PackageReference Include="SimpleMathComponent" Version="0.3.1-prerelease" />
+		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.0.1" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221209.1" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
+		<PackageReference Include="SimpleMathComponent" Version="0.3.5-prerelease" />
 		<Manifest Include="$(ApplicationManifest)" />
 	</ItemGroup>
 

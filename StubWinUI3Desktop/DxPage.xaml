@@ -9,8 +9,9 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel BorderThickness="10" BorderBrush="DarkMagenta">
-        <prj:BoxRenderer Width="200" Height="100" BorderThickness="5" BorderBrush="Yellow"/>
-        <TextBlock Text="Above this text, there should be BoxRenderer(SwapChainPanel from WRC) with Yellow border but I cannot see it."/>
+    <StackPanel BorderThickness="10" BorderBrush="DarkMagenta" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <TextBlock Text="DarkMagenta frame is StackPanel's border in stub. The thickness is 10."/>
+        <prj:BoxRenderer Width="1280" Height="768" BorderThickness="5" BorderBrush="Yellow"/>
+        <TextBlock Text="Above, there should be 'BoxRenderer'(SwapChainPanel from WRC) with Yellow border. (Is the border meanless?)"/>
     </StackPanel>
 </Page>

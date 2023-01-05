@@ -2,12 +2,7 @@
 # A sample project of a C++/WinRT XAML object to make C#/.Net projection
 
 A sample project to make UserControl (based on SwapChainPanel in C++/WinRT) and projection project for .Net.
-This repository was made to "Ask Question" in [Microsoft Q&A](https://learn.microsoft.com/en-us/answers/questions/992490/how-to-make-projection-usercontrol-xaml-resource-i.html) but I also want help from other persons. The code does not work, currently. How can I make it work, is the Question.
-
-The repository includes;
-
-- One Windows Runtime Component and Projecting project, _CppWinRTComponentProjectionSample_.
-- Two stub projects to use it. One is the original _ConsoleAppSample_, the others new _StubWinUI3Desktop_. Previously another solution _ConsoleAppSample_ existed but was removed. This is to simplify the point of error.
+This repository was made to "Ask Question" in [Microsoft Q&A](https://learn.microsoft.com/en-us/answers/questions/992490/how-to-make-projection-usercontrol-xaml-resource-i.html) but I also want help from other persons. The code shows SwapChainPanel on local NuGet package in C++/WinRT on C# WinUI3 xaml code. Now I'm investigating how to interop with DirectX. I don't know wether it can be achieved through NuGet system. For debug, it seems harder.
 
 The most of the code comes from _"original code"_ on Reference "SimpleMath" by Microsoft.
 
@@ -22,18 +17,31 @@ So I thought that I can get performance in C++ and get productivity in C#. Espec
 But it seems a harder way than I thought. Every tutorials in Microsoft Docs avoid this case. In old days, in UWP articles, there are some ways to make tool panels in XAML. Now, the .Net 6 restrict to use "project reference". It means that I have to make it in NuGet package. Are there good way to debug C# and C++'s *.nuget package interactively? The nuget package should not be just a gathering of APIs. It needs states, memory and processes. Is the architecture possible?
 
 With "project reference", I have a UWP sample. What I want is WinUI3 desktop.
-
-
 <br><br>
 ## Status
-In a *Page* of the C# app, "_StubWinUI3Desktop_", I want place a *SwapChainPanel* in WinUI3 and use DirectX to draw something in C++/WinRT. So I want to check if the *SwapChainPanel* or *UserControl* derived from the Projection project can be a boundary of interop C++/WinRT and C#.<br>
-
-After all, the question comes to "Is it possible?"<br>
-
-Though the repository code tried to refer WRC via NuGet package, it just accord a way of "SimpleMath". I realized the nuget package is very hard to debug. Generally speaking, most people prefer to refer to it as conventional DLL or project reference, I think.
+In 30/12/2022, JunjieZhu-MSFT-san gave us the workaround to show the content of SwapChainPanel in nuget package. It requires Generic.xbf, a compiled generic.xaml. So I put it according to the advise.
+Then now I'll restart investivgate the possibility to DirectX (in C++) interoperability without any wrappers. I still don't know this possible or not.<br>
 <br><br>
-## Reproducing Error
 
+## The Source Code
+
+The repository includes;
+
+- One Windows Runtime Component and Projecting project, _CppWinRTComponentProjectionSample_.
+- One stub project named _StubWinUI3Desktop_ to use it. Though another solution _ConsoleAppSample_ existed but is obsolete.
+
+Currently, the default SwapChainPanel has only TextBox, no draw, no shader.
+  1) Open solution file "CppWinRTComponentProjectionSample.sln" and restore packages then make it Release/AnyCPU.
+      it should provide "....\NetProjection\SimpleMathProjection\nuget\SimpleMathComponent.x.y.z-prerelease.nupkg" where 'x.y.z' is what you specified in "SimpleMathProjection.nuspec" as version number.
+  2) Then open solution file "StubWinUI3Desktop.sln" and restore packages then make it Relase or Debug as x64 application. Be sure you're referring the ratest build nupkg. I recommend you to update version number in *.nuspec on every build.<br>
+<br>
+Soon or later, I'll unify these solutions.
+
+## Reproducing Error
+updated: 1/5/2023
+
+There seems no errors at this moment. The border color/width on SwapChainPanel seems meanless as specifiication.
+<br><br>
 updated: 9/27/2022
 
 Windows SDK 10.0.22621.0 and 10.0.19040.0(as minimum).
@@ -60,6 +68,9 @@ The control "**BoxRenderer**" is included in it. This is a user control derived 
 
 ## Update
 
+- Jan. 5/2023
+  - Adopt 
+  - Updated NuGet packages to the ratest (but not preview).
 - 9/27/2022
   - Update some NuGet packages to the latest stables and confirm it doesn't harm.
   - Add "Themes\Generic.xaml" in *.nupec of projection project to add it to "Lib" in output. but no luck.

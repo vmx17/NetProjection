@@ -11,6 +11,9 @@ _*.*
 *_.*
 *.bak.*
 *.bkup.*
+*.bak
+*.bkup
+*.ori
 * - Copy.*
 * - Copy/
 *.bak/

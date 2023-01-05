@@ -1,0 +1,8 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<Content Include="$(MSBuildThisFileDirectory)..\content\Generic.xbf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>SimpleMathComponent\Themes\Generic.xbf</TargetPath>
+		</Content>	      
+	</ItemGroup>
+</Project>

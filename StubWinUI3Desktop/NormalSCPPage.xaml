@@ -9,9 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel BorderThickness="5" BorderBrush="DarkOrange">
-        <TextBlock Text="Below is a local SwapChainPanel but I cannot see green border. Does BorderBrush work on SwapChainPanel?" />
+        <TextBlock Text="Below is a 'local' SwapChainPanel but I cannot see ForestGreen border, as specified. Does BorderBrush work on SwapChainPanel?" />
         <SwapChainPanel x:Name="LocalSwapChainPanel" BorderThickness="10" BorderBrush="ForestGreen">
-            <TextBlock Text="Push [Next Page] button to see 'remote' SwapChainPanel-based BoxRenderer in nuget package." />
+            <TextBlock Text="This is a TextBlock on 'local' SwapChainPanel. Push [Next Page] button to see 'remote' SwapChainPanel-based BoxRenderer in nuget package." />
         </SwapChainPanel>
     </StackPanel>
 </Page>
