@@ -20,7 +20,7 @@ With "project reference", I have a UWP sample. What I want is WinUI3 desktop.
 <br><br>
 ## Status
 In 30/12/2022, JunjieZhu-MSFT-san gave us the workaround to show the content of SwapChainPanel in nuget package. It requires Generic.xbf, a compiled generic.xaml. So I put it according to the advise.
-Then now I'll restart investivgate the possibility to DirectX (in C++) interoperability without any wrappers. I still don't know this possible or not.<br>
+Then now I'll restart investivgate the possibility to DirectX (in C++) interoperability without wrappers. I still don't know this possible or not.<br>
 <br><br>
 
 ## The Source Code
@@ -32,7 +32,7 @@ The repository includes;
 
 Currently, the default SwapChainPanel has only TextBox, no draw, no shader.
   1) Open solution file "CppWinRTComponentProjectionSample.sln" and restore packages then make it Release/AnyCPU.
-      it should provide "....\NetProjection\SimpleMathProjection\nuget\SimpleMathComponent.x.y.z-prerelease.nupkg" where 'x.y.z' is what you specified in "SimpleMathProjection.nuspec" as version number.
+      it should provide "....\NetProjection\SimpleMathProjection\nuget\SimpleMathComponent.A.B.C-prerelease.nupkg" where 'A.B.C' is what you specified in "SimpleMathProjection.nuspec" as version number.
   2) Then open solution file "StubWinUI3Desktop.sln" and restore packages then make it Relase or Debug as x64 application. Be sure you're referring the ratest build nupkg. I recommend you to update version number in *.nuspec on every build.<br>
 <br>
 Soon or later, I'll unify these solutions.
@@ -64,12 +64,12 @@ The control "**BoxRenderer**" is included in it. This is a user control derived 
 
 ## What doesn't work
 
-- cannot display *BoxRenderer* XAML custom control which is just contain *SwapChainPanel* in WindowsRuntimeComponent which is written in C++/WinRT. There are no runtime error. If Height and Width properties are specified in the reference in DxPage.xaml of StubWinUI3Desktop, there appears a blank object (can confirm it looking the position of button goes left). So, refers something but does not show contents. All default value seems neglected.(?)
+- ~~cannot display *BoxRenderer* XAML custom control which is just contain *SwapChainPanel* in WindowsRuntimeComponent which is written in C++/WinRT. There are no runtime error. If Height and Width properties are specified in the reference in DxPage.xaml of StubWinUI3Desktop, there appears a blank object (can confirm it looking the position of button goes left). So, refers something but does not show contents. All default value seems neglected.(?)~~
 
 ## Update
 
 - Jan. 5/2023
-  - Adopt 
+  - Adopt workaround provided by JunjieZhu-MSFT.
   - Updated NuGet packages to the ratest (but not preview).
 - 9/27/2022
   - Update some NuGet packages to the latest stables and confirm it doesn't harm.
