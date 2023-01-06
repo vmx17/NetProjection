@@ -23,7 +23,7 @@ In 30/12/2022, JunjieZhu-MSFT-san gave us the workaround to show the content of 
 Then now I'll restart investivgate the possibility to DirectX (in C++) interoperability without wrappers. I still don't know this possible or not.<br>
 <br><br>
 
-## The Source Code
+## The Source Code Usage
 
 The repository includes;
 
@@ -33,16 +33,16 @@ The repository includes;
 Currently, the default SwapChainPanel has only TextBox, no draw, no shader.
   1) Open solution file "CppWinRTComponentProjectionSample.sln" and restore packages then make it Release/AnyCPU.
       it should provide "....\NetProjection\SimpleMathProjection\nuget\SimpleMathComponent.A.B.C-prerelease.nupkg" where 'A.B.C' is what you specified in "SimpleMathProjection.nuspec" as version number.
-  2) Then open solution file "StubWinUI3Desktop.sln" and restore packages then make it Relase or Debug as x64 application. Be sure you're referring the ratest build nupkg. I recommend you to update version number in *.nuspec on every build.<br>
+  2) Then open solution file "StubWinUI3Desktop.sln" and restore packages then make it Relase or Debug as x64 application. Be sure you're referring the ratest build nupkg. I recommend you to update version number in *.nuspec on every build.
 <br>
-Soon or later, I'll unify these solutions.
+Soon or later, I'll unify these solution files.
 
-## Reproducing Error
-updated: 1/5/2023
+## Reproducing Errors
+- updated: 1/5/2023
 
-There seems no errors at this moment. The border color/width on SwapChainPanel seems meanless as specifiication.
-<br><br>
-updated: 9/27/2022
+There seems no errors at this moment. The border color/width on SwapChainPanel seems meanless as specifiication. The _main_ branch was updated and the _develop_ branch was reproduced.
+
+- updated: 9/27/2022
 
 Windows SDK 10.0.22621.0 and 10.0.19040.0(as minimum).
 with VisualStudio 2022;
@@ -71,6 +71,7 @@ The control "**BoxRenderer**" is included in it. This is a user control derived 
 - Jan. 5/2023
   - Adopt workaround provided by JunjieZhu-MSFT.
   - Updated NuGet packages to the ratest (but not preview).
+  - Updated the _main_ branch at the code repository and _develop_ branch was once removed then re-generated.
 - 9/27/2022
   - Update some NuGet packages to the latest stables and confirm it doesn't harm.
   - Add "Themes\Generic.xaml" in *.nupec of projection project to add it to "Lib" in output. but no luck.

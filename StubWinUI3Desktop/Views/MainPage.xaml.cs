@@ -12,11 +12,12 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+//using StubWinUI3Desktop.ViewModels;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace StubWinUI3Desktop
+namespace StubWinUI3Desktop.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -26,7 +27,7 @@ namespace StubWinUI3Desktop
         public MainPage()
         {
             this.InitializeComponent();
-            frame.Navigate(typeof(NormalSCPPage));
+            frame.Navigate(typeof(LocalSCPPage));
         }
 
         private void myButton_Click(object sender, RoutedEventArgs e)

@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="StubWinUI3Desktop.Views.DxPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StubWinUI3Desktop.Views"
+    xmlns:vm="using:StubWinUI3Desktop.ViewModels"
+    xmlns:prj="using:SimpleMathComponent"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <vm:DxPageViewModel x:Name="viewModel"/>
+    </Page.DataContext>
+    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <TextBlock Text="DarkMagenta frame is StackPanel's border in stub. The thickness is 10."/>
+        <Border
+            x:Name="sCPBorder"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            SizeChanged="SCPBorder_SizeChanged"
+            PointerEntered="SCPBorder_Entered"
+            PointerExited="SCPBorder_Exited"
+            PointerCaptureLost="SCPBorder_PointerCaptureLost">
+        <prj:BoxRenderer
+            x:Name="nuGetSwapChainPanel"
+            Width="{x:Bind viewModel.SCPWidth, Mode=TwoWay}"
+            Height="{x:Bind viewModel.SCPHeight, Mode=TwoWay}"
+            PointerMoved="SCPPointer_Moved"/>
+        </Border>
+        <TextBlock Text="Above, there should be 'BoxRenderer'(SwapChainPanel from WRC) with Yellow border. (Is the border meanless?)"/>
+    </StackPanel>
+</Page>
