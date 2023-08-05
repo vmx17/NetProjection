@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SwapChainComponent</id>
+    <version>0.0.1-prerelease</version>
+    <authors>Volker Veidt</authors>
+    <description>A simple component with basic math operations and SwapChainPanel for renderer</description>
+    <dependencies>
+      <!--Note: Target .NET 5 by replacing instances of "net6.0" with "net5.0 in this file"-->
+      <group targetFramework="net6.0-windows10.0.22621.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!--Note: This sample assumes the solution configuration and platform are set to Release and x64-->
+    <file src="..\..\_build\AnyCPU\Release\SwapChainComponentProjection\bin\SwapChainComponentProjection.dll" target="lib\net6.0-windows10.0.22621.0\SwapChainComponentProjection.dll" />
+    <!--Arch-specific implementation DLLs should be copied into RID-relative folders-->
+    <file src="..\..\_build\x64\Release\SwapChainComponent\bin\SwapChainComponent\SwapChainComponent.dll" target="runtimes\win10-x64\native\SwapChainComponent.dll" />
+    <!--To support x86 and ARM64, build SwapChainComponent for those other architectures and uncomment the entries below.-->
+    <!--<file src="..\..\_build\Win32\Release\SwapChainComponent\bin\SwapChainComponent\SwapChainComponent.dll" target="runtimes\win10-x86\native\SwapChainComponent.dll" />-->
+    <!--<file src="..\..\_build\arm64\Release\SwapChainComponent\bin\SwapChainComponent\SwapChainComponent.dll" target="runtimes\win10-arm64\native\SwapChainComponent.dll" />-->
+	<file src="..\..\_build\x64\Release\SwapChainComponent\bin\SwapChainComponent\SwapChainComponent\Themes\Generic.xaml" target="lib\net6.0-windows10.0.22621.0\Themes"/>
+	<file src="..\..\_build\x64\Release\SwapChainComponent\obj\embed\SwapChainComponent\Themes\Generic.xbf" target="content\Generic.xbf"/>
+    <file src="SwapChainComponent.targets" target="build\SwapChainComponent.targets"></file>	  
+  </files>
+</package>

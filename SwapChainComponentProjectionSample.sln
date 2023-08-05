@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.targets = Directory.Build.targets
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleMathComponent", "SimpleMathComponent\SimpleMathComponent.vcxproj", "{D6B0C16D-858A-4C1B-99CF-D6F4CF5BCD5F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SwapChainComponent", "SwapChainComponent\SwapChainComponent.vcxproj", "{D6B0C16D-858A-4C1B-99CF-D6F4CF5BCD5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMathProjection", "SimpleMathProjection\SimpleMathProjection.csproj", "{58C6696E-B763-438B-9CCC-AA3F93DFC99F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwapChainComponentProjection", "SwapChainComponentProjection\SwapChainComponentProjection.csproj", "{58C6696E-B763-438B-9CCC-AA3F93DFC99F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{D6B0C16D-858A-4C1B-99CF-D6F4CF5BCD5F} = {D6B0C16D-858A-4C1B-99CF-D6F4CF5BCD5F}
 	EndProjectSection

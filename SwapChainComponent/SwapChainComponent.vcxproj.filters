@@ -21,12 +21,15 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="SimpleMathComponent.def" />
     <None Include="packages.config" />
+    <None Include="SwapChainComponent.def" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.xaml">
       <Filter>Theme</Filter>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natvis" />
   </ItemGroup>
 </Project>

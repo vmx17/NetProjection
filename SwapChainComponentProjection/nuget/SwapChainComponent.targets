@@ -2,7 +2,7 @@
 	<ItemGroup>
 		<Content Include="$(MSBuildThisFileDirectory)..\content\Generic.xbf">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-			<TargetPath>SimpleMathComponent\Themes\Generic.xbf</TargetPath>
+			<TargetPath>SwapChainComponent\Themes\Generic.xbf</TargetPath>
 		</Content>	      
 	</ItemGroup>
 </Project>

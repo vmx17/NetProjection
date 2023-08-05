@@ -9,8 +9,8 @@
     <CppWinRTGenerateWindowsMetadata>true</CppWinRTGenerateWindowsMetadata>
     <MinimalCoreWin>true</MinimalCoreWin>
     <ProjectGuid>{d6b0c16d-858a-4c1b-99cf-d6f4cf5bcd5f}</ProjectGuid>
-    <ProjectName>SimpleMathComponent</ProjectName>
-    <RootNamespace>SimpleMathComponent</RootNamespace>
+    <ProjectName>SwapChainComponent</ProjectName>
+    <RootNamespace>SwapChainComponent</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <AppContainerApplication>true</AppContainerApplication>
@@ -107,7 +107,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
-      <ModuleDefinitionFile>SimpleMathComponent.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>SwapChainComponent.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
@@ -148,7 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="SimpleMathComponent.def" />
+    <None Include="SwapChainComponent.def" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.xaml" />

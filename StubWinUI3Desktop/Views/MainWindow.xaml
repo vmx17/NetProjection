@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     Activated="Window_Activated">
 
-    <Frame x:Name="rootFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SizeChanged="FrameSize_Changed">
+    <Frame x:Name="rootFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Frame.DataContext>
             <vm:MainWindowViewmodel x:Name="viewModel"/>
         </Frame.DataContext>

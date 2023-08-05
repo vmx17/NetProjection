@@ -33,19 +33,19 @@ namespace StubWinUI3Desktop.Views
             //var renderer = new SimpleMathComponent.BoxRenderer();
         }
 
-        private void SCPBorder_Entered(object sender, PointerRoutedEventArgs args)
+        private void SCPGrid_Entered(object sender, PointerRoutedEventArgs args)
         {
             m_getPointer = true;
             args.Handled = true;
         }
 
-        private void SCPBorder_Exited(object sender, PointerRoutedEventArgs args)
+        private void SCPGrid_Exited(object sender, PointerRoutedEventArgs args)
         {
             m_getPointer = false;
             args.Handled = true;
         }
 
-        private void SCPBorder_PointerCaptureLost(object sender, PointerRoutedEventArgs args)
+        private void SCPGrid_PointerCaptureLost(object sender, PointerRoutedEventArgs args)
         {
             m_getPointer = false;
             args.Handled = true;
@@ -62,7 +62,7 @@ namespace StubWinUI3Desktop.Views
             args.Handled = true;
         }
 
-        private void SCPBorder_SizeChanged(object sender, SizeChangedEventArgs args)
+        private void SCPGrid_SizeChanged(object sender, SizeChangedEventArgs args)
         {
             var sz = args.NewSize;
             viewModel.SCPWidth = sz.Width;

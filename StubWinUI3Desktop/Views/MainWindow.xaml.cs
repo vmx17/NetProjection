@@ -25,18 +25,15 @@ namespace StubWinUI3Desktop.Views
     /// </summary>
     public sealed partial class MainWindow : Window
     {
-        public MainWindow()
+        private Guid m_winId;
+        public MainWindow(Guid _id)
         {
+            m_winId = _id;
             this.InitializeComponent();
         }
-
         private void Window_Activated(object sender, WindowActivatedEventArgs args)
         {
-            ;
-        }
-        private void FrameSize_Changed(object sender, SizeChangedEventArgs args)
-        {
-            ;
+            ;   // change WindowManager settings in Model
         }
     }
 }

@@ -14,20 +14,20 @@
     </Page.DataContext>
     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <TextBlock Text="DarkMagenta frame is StackPanel's border in stub. The thickness is 10."/>
-        <Border
-            x:Name="sCPBorder"
+        <Grid
+            x:Name="SCPGrid"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
-            SizeChanged="SCPBorder_SizeChanged"
-            PointerEntered="SCPBorder_Entered"
-            PointerExited="SCPBorder_Exited"
-            PointerCaptureLost="SCPBorder_PointerCaptureLost">
-        <prj:BoxRenderer
-            x:Name="nuGetSwapChainPanel"
-            Width="{x:Bind viewModel.SCPWidth, Mode=TwoWay}"
-            Height="{x:Bind viewModel.SCPHeight, Mode=TwoWay}"
-            PointerMoved="SCPPointer_Moved"/>
-        </Border>
+            SizeChanged="SCPGrid_SizeChanged"
+            PointerEntered="SCPGrid_Entered"
+            PointerExited="SCPGrid_Exited"
+            PointerCaptureLost="SCPGrid_PointerCaptureLost">
+            <prj:BoxRenderer
+                x:Name="nuGetSwapChainPanel"
+                Width="{x:Bind viewModel.SCPWidth, Mode=TwoWay}"
+                Height="{x:Bind viewModel.SCPHeight, Mode=TwoWay}"
+                PointerMoved="SCPPointer_Moved"/>
+        </Grid>
         <TextBlock Text="Above, there should be 'BoxRenderer'(SwapChainPanel from WRC) with Yellow border. (Is the border meanless?)"/>
     </StackPanel>
 </Page>

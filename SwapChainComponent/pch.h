@@ -4,7 +4,7 @@
 #include <wrl.h>
 #include <wrl/client.h>
 #include <dxgi1_4.h>
-#include <d3d11_3.h>
+#include <d3d11_4.h>
 #include <d2d1_3.h>
 #include <d2d1effects_2.h>
 #include <dwrite_3.h>
@@ -15,12 +15,12 @@
 //#include <agile.h>
 #include <concrt.h>
 //#include <collection.h>
-
+#include <microsoft.ui.xaml.media.dxinterop.h>
 
 #include <unknwn.h>
 #include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Foundation.Collections.h>
-
+#include <winrt/Windows.UI.Xaml.Media.Imaging.h>
 // for xaml_typename what WinUI3 template does not have.
 #include <winrt/Windows.UI.Xaml.Interop.h>
 
@@ -36,7 +36,7 @@
 #include <winrt/Windows.Graphics.Display.h>
 #include <winrt/Windows.UI.Core.h>
 #include "BoxRenderer.h"
-//#include "SimpleMath.h"
+//#include "SwapChainComponent.h"
 
 typedef unsigned long uint32;
 typedef unsigned long long uint64;

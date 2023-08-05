@@ -12,7 +12,7 @@ namespace StubWinUI3Desktop.ViewModels
 {
     internal class DxPageViewModel: ObservableObject
     {
-        private double m_scp_width=640.0, m_scp_height=480.0;
+        private double m_scp_width=1024.0, m_scp_height=768.0;
         internal double SCPWidth
         {
             get { return m_scp_width; }
